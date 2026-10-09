@@ -9,6 +9,10 @@ index.html      ページ本体
 css/style.css   スタイル
 js/main.js      スマホ用メニューなどの動作
 images/logo.png ロゴ（白背景。CSSでコーポレートカラー #FFFF72 の上に乗算表示）
+images/ogp.png  SNSでシェアされたときの画像（1200×630）
+favicon.ico / favicon.png / apple-touch-icon.png  ファビコン
+robots.txt / sitemap.xml  検索エンジン向けの設定
+CNAME           GitHub Pages の独自ドメイン設定
 ```
 
 ## 確認方法
@@ -66,3 +70,10 @@ HTMLにはメールアドレスを平文で書かず、`js/main.js` で表示時
 ```sh
 python3 -c "print('sunny-side.tokyo'[::-1])"
 ```
+
+## 検索エンジン対策（SEO）
+
+- `index.html` の `<head>` に、canonical・OGP・構造化データ（JSON-LD）を入れています
+- 社名・所在地・事業内容を変えたときは、本文と一緒に構造化データと `meta description` も更新してください
+- ページを更新したら、`sitemap.xml` の `<lastmod>` を更新日に書き換えてください
+- Google Search Console に `sunny-side.tokyo` を登録し、`https://sunny-side.tokyo/sitemap.xml` を送信してください
