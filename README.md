@@ -47,3 +47,22 @@ python3 -m http.server 8000
 - `<wbr>` がない部分は、句読点の位置でしか改行されません
 - 1つの段落は、HTML上でも改行せずに1行で書いてください（途中で改行すると、文の間に半角スペースが表示されます）
 - PC表示のときだけ改行したい位置には `<br class="pc-only">` を使います
+
+## メールアドレスの表記（迷惑メール対策）
+
+HTMLにはメールアドレスを平文で書かず、`js/main.js` で表示時に組み立てています。
+
+```html
+<a data-mail-u="ofni" data-mail-d="oykot.edis-ynnus" data-mail-text>info［at］sunny-side.tokyo</a>
+```
+
+- `data-mail-u`：`@` より前を**逆順**にしたもの（`info` → `ofni`）
+- `data-mail-d`：`@` より後ろを**逆順**にしたもの（`sunny-side.tokyo` → `oykot.edis-ynnus`）
+- `data-mail-text` を付けると、要素の文字がアドレスに置き換わります（付けない場合はリンク先だけ設定）
+- 要素の中の文字（`info［at］…`）は、JavaScriptが動かない環境での表示です
+
+アドレスを変えるときは、逆順の文字列を次のコマンドで作ると間違えません。
+
+```sh
+python3 -c "print('sunny-side.tokyo'[::-1])"
+```
