@@ -24,9 +24,10 @@ python3 -m http.server 8000
 
 ## 公開（GitHub Pages）
 
-1. GitHub のリポジトリで **Settings → Pages** を開く
-2. **Source** を `Deploy from a branch`、ブランチを `main` / `/ (root)` に設定
-3. 数分後に `https://kazusuna3.github.io/SunnysideWebpage/` で公開されます
+- 公開URL：https://sunny-side.tokyo/
+- `main` ブランチのルートを GitHub Pages で配信しています（Settings → Pages）
+- 独自ドメインは `CNAME` ファイルで指定しています
+- DNS はムームードメイン（ムームーDNS）で管理しています。メール（Google Workspace）の MX レコードは消さないでください
 
 ## 掲載内容の方針
 
